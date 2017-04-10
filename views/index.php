@@ -40,6 +40,9 @@
                             cache: false,
                             timeout: 30000,
                             data: {id_order: id_order},
+                            error: function() {
+        	                    $("#"+id_order).empty().append("<td>" + url + "</td> <td> Ошибка!</td> <td> Error! </td>");
+                            },
                             beforeSend: function () {
                                 $('table').append("<tr id='" + id_order + "'> <td>" + url + "</td> <td> Загрузка...</td> <td></td> </tr>");
                             },
