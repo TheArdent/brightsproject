@@ -1,0 +1,1 @@
+<?phpinclude_once __DIR__.'/autoload.php';$url = $_SERVER['REQUEST_URI'];$params = explode('/',$url);unset($params[0]);if ($params[1] == ""){	$method = 'actionIndex';}else {	$method = 'action'.$params[1];}$controller = new UrlController();$controller->$method();
